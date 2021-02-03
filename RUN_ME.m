@@ -55,7 +55,7 @@ QPSK_DATA_SIG = 1-2*A(1:2:end) + 1i*(1-2*A(2:2:end));
 
 F_SIG_NO_CP = zeros(1,FFT_len); 
 F_SIG_NO_CP(Data_Position) = QPSK_DATA_SIG;
-F_SIG_NO_CP(Pilot_Position) = 1+1i; % all pilot symbols are sqrt(2)
+F_SIG_NO_CP(Pilot_Position) = 1+1i; 
 
 % IFFT 
 T_SIG_NO_CP = ifft(F_SIG_NO_CP);
