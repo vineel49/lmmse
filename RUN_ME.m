@@ -96,10 +96,10 @@ QPSK_SYM3 = QPSK_SYM(3)*ones(1,FFT_len-Pilot_num);
 QPSK_SYM4 = QPSK_SYM(4)*ones(1,FFT_len-Pilot_num);
 
 DIST = zeros(4,FFT_len-Pilot_num);
-DIST(1,:)=(abs(F_REC_SIG_NO_CP(Data_Position) - F_H_Data_location.*QPSK_SYM1)).^2; 
-DIST(2,:)=(abs(F_REC_SIG_NO_CP(Data_Position) - F_H_Data_location.*QPSK_SYM2)).^2;
-DIST(3,:)=(abs(F_REC_SIG_NO_CP(Data_Position) - F_H_Data_location.*QPSK_SYM3)).^2;
-DIST(4,:)=(abs(F_REC_SIG_NO_CP(Data_Position) - F_H_Data_location.*QPSK_SYM4)).^2; 
+DIST(1,:)=abs(F_REC_SIG_NO_CP(Data_Position) - F_H_Data_location.*QPSK_SYM1).^2; 
+DIST(2,:)=abs(F_REC_SIG_NO_CP(Data_Position) - F_H_Data_location.*QPSK_SYM2).^2;
+DIST(3,:)=abs(F_REC_SIG_NO_CP(Data_Position) - F_H_Data_location.*QPSK_SYM3).^2;
+DIST(4,:)=abs(F_REC_SIG_NO_CP(Data_Position) - F_H_Data_location.*QPSK_SYM4).^2; 
 
 % COMPARING EUCLIDEAN DISTANCE
 [~,INDICES] = min(DIST,[],1);
